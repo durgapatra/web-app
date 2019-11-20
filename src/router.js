@@ -10,7 +10,8 @@ import AuthRoutes from "globals/hoc/private";
 import { Spin } from "antd";
 
 const Home = lazy(() => import("modules/Home"));
-
+const FamilyDirectory = lazy(() => import("./modules/FamilyDirectory"));
+const Contact = lazy(() => import("./modules/Contact"));
 const redirect = pathname => () => {
   return <Redirect to={{ pathname }} />;
 };
@@ -65,6 +66,12 @@ const ContentRoute = props => {
       <Switch>
         <Route exact path="/" render={redirect("home")} />
         <Route exact path="/home" render={() => <Home {...props} />} />
+        <Route
+          exact
+          path="/family-directory"
+          render={() => <FamilyDirectory {...props} />}
+        />
+        <Route exact path="/contact-us" render={() => <Contact {...props} />} />
 
         {/* <Route exact path="/*" render={() => <NotFound {...props} />} /> */}
       </Switch>

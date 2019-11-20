@@ -30,20 +30,18 @@ class MainMenu extends Component {
             </span>
           }
         >
-          <Menu.Item key="setting:1">Option 1</Menu.Item>
+          <Menu.Item key="setting:1">
+            <Link to="/family-directory">Family Directory</Link>
+          </Menu.Item>
           <Menu.Item key="setting:2">Option 2</Menu.Item>
         </SubMenu>
-        <SubMenu
-          title={
-            <span className="submenu-title-wrapper">
-              <Icon component={ContentUs} />
-              contact us
-            </span>
-          }
-        >
-          <Menu.Item key="setting:1">Option 1</Menu.Item>
-          <Menu.Item key="setting:2">Option 2</Menu.Item>
-        </SubMenu>
+
+        <Menu.Item key="setting:1">
+          <Link to="/contact-us">
+            <Icon component={ContentUs} />
+            Contact Us
+          </Link>
+        </Menu.Item>
       </Menu>
     );
   }
